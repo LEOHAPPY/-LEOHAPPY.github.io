@@ -461,8 +461,8 @@ code {
 }
 html,
 body {
-  color: #fff;
-  background-color: #555;
+  color: #555;
+  background-color: #fff;
   font-size: 100%; /* add PX (or original value) as backup */
   font-size: 100%;
 }
@@ -471,13 +471,13 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: #555;
+  color: #fff;
   background-color: #ff6347;
   transition: all 0.25s;
   cursor: pointer;
 }
 strong {
-  color: #fff;
+  color: #555;
 }
 h1,
 h2,
@@ -485,7 +485,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #fff;
+  color: #555;
 }
 .site-header {
   padding: 2.5rem 0;
@@ -606,11 +606,11 @@ h6 {
   color: #ff6347;
 }
 .post-item-wrapper .date-and-category .categories {
-  color: #555;
+  color: #fff;
   background-color: #ff6347;
 }
 .post-item-wrapper .date-and-category .categories > a {
-  color: #555;
+  color: #fff;
   background-color: #ff6347;
 }
 .post-item-wrapper .tags {
@@ -730,12 +730,12 @@ footer {
 }
 .pagination > li > a {
   color: #ff6347;
-  background-color: #555;
+  background-color: #fff;
   border: 1px solid #ff6347;
   border-radius: 0.1875rem;
 }
 .pagination > li > a:hover {
-  color: #555;
+  color: #fff;
   background-color: #ff6347;
   border: 1px solid #ff6347;
 }
