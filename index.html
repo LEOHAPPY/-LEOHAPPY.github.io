@@ -1,353 +1,205 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Leo Joe Berlin">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Leo"/>
+  <meta property="og:description" content="Descriptions" />
+  <meta property="og:site_name" content="Leo"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://yoursite.comundefined"/>
   
-  <title>Hexo For Leo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Descriptions">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo For Leo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo For Leo">
-<meta property="og:description" content="Descriptions">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo For Leo">
-<meta name="twitter:description" content="Descriptions">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo For Leo" type="application/atom+xml">
-  
+    <link rel="alternate" href="/atom.xml" title="Leo" type="application/atom+xml">
   
   
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/favicon.png">
   
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Site Title -->
+  <title>Leo</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
 
-  <link rel="stylesheet" href="/css/styles.css">
+  <!-- Google Analytics -->
   
 
 </head>
 
-<body>
-  <nav class="navbar navbar-inverse">
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
   <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="main-menu-navbar">
-      <ul class="nav navbar-nav">
-        
-          <li><a class="active"
-                 href="/index.html">Home</a></li>
-        
-          <li><a class=""
-                 href="/archives/">Archives</a></li>
-        
-      </ul>
-
-      <!--
-      <ul class="nav navbar-nav navbar-right">
-        
-          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
-        
-      </ul>
-      -->
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-  <div class="container">
-    <div class="blog-header">
-  <h1 class="blog-title">Hexo For Leo</h1>
-  
-    <p class="lead blog-description">This is for subtitle</p>
-  
-</div>
-
     <div class="row">
-        <div class="col-sm-8 blog-main">
-          
-  
-    <article id="post-Second-Page" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/11/Second-Page/">C#多线程应用——让海量数据的下载任务可控</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2017/07/11/Second-Page/" class="article-date"><time datetime="2017-07-11T12:25:10.000Z" itemprop="datePublished">2017-07-11</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://www.jianshu.com/p/fbff5123d14a" target="_blank" rel="external">在上一个任务</a>成功给团队demo之后，大家同意了我进一步的考虑——让下载数据这个进程可控，能够根据用户的需要关闭下载进程，进行其他任务。</p>
-<p>我的想法来自于之前学Android中的AsyncTask：</p>
-<blockquote>
-<p>AsyncTask enables <strong>proper and easy use of the UI thread</strong>. This class allows you to perform background operations and publish results on the UI thread without having to manipulate threads and/or handlers.</p>
-</blockquote>
-<p>如定义所述，AsyncTask能够让我们在Android程序编写中无需使用多线程，即可使后台任务独立运行，并将结果反馈给UI进程。</p>
-<p>这里将老师的课件对比案例引用如下：<br><img src="http://upload-images.jianshu.io/upload_images/99036-7b20fdcb8479af9c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Using Async Task in Android"></p>
-<p>与一般的Sync相比为什么要使用Async呢，相信大家看完上面的栗子已经有所了解，我们再现来看看Microsoft给出的解释，注意一些关键词：</p>
-<blockquote>
-<p><strong>Async Improves Responsiveness</strong><br>Asynchrony is <strong>essential for</strong> activities that are <strong>potentially blocking</strong>, such as when your application accesses the web. Access to a web resource sometimes is slow or delayed. <strong>If such an activity is blocked within a synchronous process, the entire application must wait.</strong> In an asynchronous process, the application can <strong>continue with other work</strong> that doesn’t depend on the web resource <strong>until</strong> the potentially blocking <strong>task finishes</strong>.</p>
-</blockquote>
-<p>由于需要改进的项目是C#编写的Window Form Application，在网上找到，在.NET的Toolbox中，有一个BackgroundWorker控件也能够让我们“proper and easy use of the UI thread＂</p>
-<blockquote>
-<p>BackgroundWorker makes threads easy to implement in Windows Forms. Intensive tasks need to be done on another thread so the UI does not freeze. It is necessary to post messages and update the user interface when the task is done.</p>
-</blockquote>
-<p>是不是和AsyncTask的思想是一致的~~<br>BackgroundWorker通过DoWork，ProgressChanged，RunWorkerCompleted这三个EventHandler，分别控制程序的后台运行，进程的更新和结束后，我们只需要把任务分类到这三个EventHandler中，然后在UI线程中调用即可。</p>
-<p>为了控制在程序在后台的运行状况和是否可被取消，需要设置它的两个属性True/False：WorkerReportsProgress， WorkerSupportsCancellation。</p>
-<p>关于BackgroundWorker就不赘述了，在学习使用的时候，这两篇教程相见恨晚：</p>
-<ol>
-<li><a href="https://www.dotnetperls.com/backgroundworker-introduction" target="_blank" rel="external">https://www.dotnetperls.com/backgroundworker-introduction</a></li>
-<li><a href="http://omegacoder.com/?p=642" target="_blank" rel="external">http://omegacoder.com/?p=642</a></li>
-</ol>
-<p>BackgroundWorker作为Asynchronous Programming的基础，可以为设计结构较为简单的程序实现后台任务的运行，和Thread相比能够更方便地和UI进程进行信息交互。然而它们都比较繁琐。</p>
-<p>在C# 4.0之后，Microsoft推出了Task。<br>O’REILLY出版的《C# 5.0 IN A NUTSHELL》 中指出Task弥补了Thread的不足：</p>
-<blockquote>
-<p>A thread is a low-level tool for creating concurrency, and as such it has limitations. In particular:</p>
-<ol>
-<li>While it’s easy to pass data into a thread that you start, there’s no easy way to get a <strong>“return value”</strong> back from a thread that you <strong>Join</strong>. You have to set up some kind of shared field. And if the operation throws an exception, catching and propagating that exception is equally painful</li>
-<li>You can’t tell a thread to start something else when it’s finished; instead you must <strong>Join</strong> it (blocking your own thread in the process)</li>
-</ol>
-</blockquote>
-<p>C#5.0之后推出了async和await关键词:</p>
-<blockquote>
-<p>These keywords let you write asynchronous code that has the same structure and simplicity as synchronous code, as well as eliminating the “plumbing” of asynchronous programming </p>
-</blockquote>
-<p>Task与async/await关键词两者的结合使用，让Asynchronous Programming能够在Synchronous代码的基础快速改写完成，换言之，就是简单易用。</p>
-<p>那么剩下最后一个核心问题，如何取消与数据库连接下载数据的这个进程？</p>
-<p>方案一：像关闭一个asynchronous method一样，将控制数据下载的进程关闭。<br>根据这个思路，在《Entity Framework Core Cookbook》中指出：</p>
-<blockquote>
-<p><strong>All</strong> asynchronous methods take <strong>an optional CancellationToken parameter</strong>. This parameter, when supplied, provides a way for the caller method to cancel the asynchronous execution.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var source = new CancelationTokenSource();</div><div class="line">var cancel = source.Token;</div><div class="line">cancel.Register(()=&gt;&#123;</div><div class="line">  //cancelled</div><div class="line">&#125;);</div><div class="line">ctx.MyEntities.TolistAsync(cancel);</div><div class="line">if(!cancel.WaitHandle.WaitOne(TimeSpan.FromSeconds(5)))&#123;</div><div class="line">  source.Cancel();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>案例中的TolistAsync()方法称为API Async Methods，标志是以“Async”后缀结尾，它们的返回类型是Task（参见<a href="https://msdn.microsoft.com/library/hh191443(vs.110" target="_blank" rel="external">API Async Methods</a>.aspx#Anchor_3)）</p>
-<p>我的项目使用的是Entity Framework，于是引入CancellationToken，调用.ToListAsync()，将SqlQuery改写如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">IList&lt;print_pack_list_ext&gt;query = </div><div class="line">SysVariable.Database.SqlQuery&lt;print_pack_list_ext&gt;(sql.ToString(), parameters).ToListAsync(token);</div></pre></td></tr></table></figure></p>
-<p>应用这个方法后，并没有成功终止。网站上也有人遇到的了同样的问题，听说微软团队针对Entity Framework尚未解决这个问题。无奈之下，当时也有几分自豪，居然被我找到了Bug~~</p>
-<p>方案二：是否存在一个终止的方法，直接作用在SqlQuery上面呢？<br>有，他就是：<a href="https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.cancel(v=vs.110" target="_blank" rel="external">SqlCommand.Cancel Method ()</a>.aspx)，正如他的使命：</p>
-<blockquote>
-<p>Tries to cancel the execution of a <a href="https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand(v=vs.110" target="_blank" rel="external">SqlCommand</a>.aspx).</p>
-</blockquote>
-<p>啊，终于找到了，他就是我的韩信。</p>
-<p>那什么时候调用这名大将呢？应该在用户取消下载任务，使CancellationToken值为False之后被Invoke。正如CancellationToken.Register Method (Action)的使命：</p>
-<blockquote>
-<p>Registers a delegate that will be called when this <a href="https://msdn.microsoft.com/en-us/library/system.threading.cancellationtoken.aspx" target="_blank" rel="external">CancellationToken</a> is canceled.</p>
-</blockquote>
-<p>所以，将SqlCommand.Cancel注册在CancelToken中即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">using (CancellationTokenRegistration ctr = token.Register(() =&gt; cmd.Cancel()))</div><div class="line">&#123;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>至此，所有的疑惑都找到了答案。</p>
-<p>从底层向上走，首先DAO改写如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">public async Task&lt;IList&lt;print_pack_list_ext&gt;&gt; GetPackByDate(DateTime datefrom, DateTime dateto, CancellationToken token)</div><div class="line">&#123;</div><div class="line">	IList&lt;print_pack_list_ext&gt; list = new List&lt;print_pack_list_ext&gt;();</div><div class="line">	try</div><div class="line">	&#123;</div><div class="line">		await Task&lt;IList&lt;print_pack_list_ext&gt;&gt;.Run(() =&gt;</div><div class="line">		&#123;</div><div class="line">			using (SqlConnection conn = new SqlConnection(getConnectionstring()))</div><div class="line">			&#123;</div><div class="line">				conn.Open();</div><div class="line">				var cmd = conn.CreateCommand();</div><div class="line">				using (CancellationTokenRegistration ctr = token.Register(() =&gt; cmd.Cancel()))</div><div class="line">				&#123;</div><div class="line">					#region sql string</div><div class="line">					string sqlString = &quot;select a.pps_number,a.created_by from pack_list a where convert(datetime, a.created_datetime, 120) &gt; convert(datetime, @dateFrom0, 120) and convert(datetime, a.created_datetime, 120) &lt; convert(datetime, @dateFrom1, 120)&quot;</div><div class="line">					#endregion</div><div class="line">					cmd.Parameters.AddWithValue(&quot;dateFrom0&quot;, datefrom);</div><div class="line">					cmd.Parameters.AddWithValue(&quot;dateFrom1&quot;, dateto);</div><div class="line">					cmd.CommandTimeout = 0;</div><div class="line">					cmd.CommandType = CommandType.Text;</div><div class="line">					cmd.CommandText = sqlString;</div><div class="line">					</div><div class="line">					DataSet ds = new DataSet();</div><div class="line">					DataTable table = new DataTable();</div><div class="line">					table.Load(cmd.ExecuteReader());</div><div class="line">					ds.Tables.Add(table);</div><div class="line">					</div><div class="line">					#region fill model</div><div class="line">					list = ds.Tables[0]</div><div class="line">						.AsEnumerable()</div><div class="line">						.Select(dataRow =&gt;</div><div class="line">							new print_pack_list_ext</div><div class="line">							&#123;</div><div class="line">								pps_number = dataRow.Field&lt;string&gt;(&quot;pps_number&quot;),</div><div class="line">								created_by = dataRow.Field&lt;string&gt;(&quot;created_by&quot;)</div><div class="line">							&#125;).ToList();</div><div class="line">					#endregion</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;, token);</div><div class="line">		return list;</div><div class="line">	&#125;</div><div class="line">	catch (SqlException ex)</div><div class="line">	&#123;</div><div class="line">		return list;</div><div class="line">	&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在Controller中调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">public async Task&lt;IList&lt;print_pack_list_ext&gt;&gt; GetPackByDate(DateTime datefrom, DateTime dateto, CancellationToken token)</div><div class="line">&#123;</div><div class="line">	return await _printPackListDAO.GetPackByDate(datefrom, dateto, token);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在View中实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line">using System.Threading.Tasks;</div><div class="line">using Solution.BusinessLayer;</div><div class="line">using Solution.ExtendedEntity;</div><div class="line"></div><div class="line">namespace Solution.Forms</div><div class="line">&#123;</div><div class="line">	public partial class FormLabelExportLog : Form</div><div class="line">	&#123;</div><div class="line">		#region property</div><div class="line">		CancellationTokenSource tokenSource;        </div><div class="line">		CancellationToken token;       </div><div class="line">		LogController _logController = new LogController();</div><div class="line">		#endregion</div><div class="line">		</div><div class="line">		#region event_button</div><div class="line">		//Code behind &apos;Generate Button&apos;</div><div class="line">		private async void myBtnGenReport_Click(object sender, EventArgs e)</div><div class="line">		&#123;</div><div class="line">			setProgressBarStyle_start();</div><div class="line">			myLabelInfo.Text = &quot;Loading...&quot;;</div><div class="line">			string selectedItem = this.myListBox1.SelectedItem.ToString();</div><div class="line"></div><div class="line">			tokenSource = new CancellationTokenSource();</div><div class="line">			token = tokenSource.Token;</div><div class="line"></div><div class="line">			DataTable taskGetData = await Task.Factory.StartNew(() =&gt; loadData(selectedItem, token), token);</div><div class="line"></div><div class="line">			if (token.IsCancellationRequested)</div><div class="line">				MessageBox.Show(&quot;Cancelled Successfully!&quot;);</div><div class="line">			else</div><div class="line">				processData(taskGetData);</div><div class="line">			tokenSource.Dispose();</div><div class="line">			</div><div class="line">			this.myLabelInfo.Text = &quot;&quot;;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		//Code behind &apos;Cancel&apos; Button</div><div class="line">		private void myBtnCancelReport_Click(object sender, EventArgs e)</div><div class="line">		&#123;</div><div class="line">			tokenSource.Cancel();</div><div class="line">			setProgressBarStyle_end();</div><div class="line">		&#125;</div><div class="line">		#endregion</div><div class="line">		</div><div class="line">		#region method_data</div><div class="line">		private DataTable loadData(string selectedItem, CancellationToken token)</div><div class="line">        &#123;</div><div class="line">			#region initialization</div><div class="line">            DataTable dt = new DataTable();</div><div class="line">            DataRow dr;</div><div class="line">            ...</div><div class="line">            #endregion</div><div class="line">			#region _PackListLog</div><div class="line">			if (selectedItem == _PackListLog)</div><div class="line">            &#123;</div><div class="line">                IList&lt;print_pack_list_ext&gt; real = new List&lt;print_pack_list_ext&gt;();</div><div class="line">                real = _logController.GetPackByDate(datefrom, dateto, token).Result;</div><div class="line"></div><div class="line">                if (!token.IsCancellationRequested)</div><div class="line">                &#123;</div><div class="line">                    ...</div><div class="line">                &#125;</div><div class="line">			&#125;</div><div class="line">			#endregion</div><div class="line">			return dt</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		private void processData(DataTable dt)</div><div class="line">		&#123;</div><div class="line">			if (dt != null)</div><div class="line">			&#123;</div><div class="line">				ExportToExcel(dt);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		#endregion</div><div class="line">	&#125;		</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>就这样愉快地完成了。虽然是个小功能，牵扯到的很多知识点都没有学过，翻阅了很多资料，虽然耗时较长，但也是实习期间收获最多，最有意义的时间。</p>
-<hr>
-<p><strong>P.S.</strong><br>所有O’RELLY的书在<a href="https://www.safaribooksonline.com/" target="_blank" rel="external">SafariOnline</a>都有，邮箱注册无需信用卡绑定免费使用10天！！真是良心～～</p>
-<p><strong>P.P.S</strong><br>整理一下上面没有提到的学习资料：</p>
-<ul>
-<li>关于Task：<br><a href="https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/task-based-asynchronous-programming" target="_blank" rel="external">https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/task-based-asynchronous-programming</a></li>
-<li>当不明白Task中括号里面的表达式，参见Lambda以及C# Delegate</li>
-<li>什么是Async和Await，它们的实现原理是什么？<br><a href="https://msdn.microsoft.com/library/hh191443(vs.110).aspx" target="_blank" rel="external">https://msdn.microsoft.com/library/hh191443(vs.110).aspx</a><br><a href="https://msdn.microsoft.com/en-us/magazine/jj991977.aspx" target="_blank" rel="external">https://msdn.microsoft.com/en-us/magazine/jj991977.aspx</a></li>
-<li>如何实现UI线程和非UI线程之间的交互？<br><a href="https://msdn.microsoft.com/en-us/library/system.invalidoperationexception(v=vs.110).aspx" target="_blank" rel="external">https://msdn.microsoft.com/en-us/library/system.invalidoperationexception(v=vs.110).aspx</a></li>
-<li>什么是Callback<br><a href="https://en.wikipedia.org/wiki/Callback_(computer_programming" target="_blank" rel="external">https://en.wikipedia.org/wiki/Callback_(computer_programming</a>)</li>
-</ul>
-<p> 就用StackOverflow上的关于delegate，event，callback的经典回答结束这一篇啦，下期再见~~</p>
-<blockquote>
-<p>I just met you<br>And this is crazy<br>But here’s my number (delegate)<br>So if something happens (event)<br>Call me (callback)</p>
-</blockquote>
-<hr>
-<p>Idea Matters</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/Second-Page/" data-id="cj5131wk7000052nan6oh5w7k" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/09/hello-world/">一招缩短海量数据的下载时间</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2017/07/09/hello-world/" class="article-date"><time datetime="2017-07-09T07:26:13.000Z" itemprop="datePublished">2017-07-09</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在某软件公司实习，成功帮助公司大大减少了下载海量历史数据的时间。其实非常简单，闲来和大家分享一下：</p>
-<p>A公司是一家跨国企业，其开发了一款软件，用于在仓库打印物流包装盒上的标签，并且将每次打印操作记录在了关系数据库中。为了方便历史数据的分析，每月底仓库工作人员需要导出该仓库的月度历史打印数据到Excel中，大约有2万条，在目前的Server性能和软件代码的效率下，平均耗时10分钟。</p>
-<p>是否存在缩短下载时间的解决方案？抱着试一试的态度，我找到了控制下载数据的sql command,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">StringBuilder sql = new StringBuilder(&quot;select a.*, d.customer_name,e.address_code, …</div></pre></td></tr></table></figure></p>
-<p>初看之下，我也没有发现这有什么问题，就是把a中的所有数据，和d,e中的部分数据提取出来。在分析了实际导出Excel的所需数据后，发现…</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/99036-f8243b5e63f81dce.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>所以，a中只有57/107的数据是需要被用到的，其余纯属浪费资源和下载时间，只需指定a中需要的数据即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">StringBuilder sql = new StringBuilder(&quot;select a.force_print,a.pps_number,a.pps_line,a.pn,a.description,a.cpn,a.print_label_qty,a.print_label_qty_ex,a.print_ship_qty,a.print_box_qty,a.print_relabel_qty,a.user_print_time,a.print_qty,a.lot,a.dc,a.brand,a.coo,a.attribute1,a.attribute2,a.attribute3,a.attribute4,a.attribute5,a.serial,a.action,a.ctn,a.net_weight,a.gross_weight,a.dimension,a.mpq,a.cap_original,a.cap,a.zsize,a.tol,a.volt,a.dielectric,a.po_item,a.mat_sales_txt,a.vendor_lot,a.box_id,a.primax_box_id,a.batch_number,a.delivery_text,a.delivery_date,a.print_date,a.plant_code,a.company_code,a.apn,a.Handling_Item,a.Handling_UnitItem,a.mat_desc,a.basic_txt,a.mfg,a.format_id,a.format_file_id,a.labelType_id,a.printNum,a.brand_ext,&quot;</div><div class="line">              + &quot; d.customer_name,e.address_code, …</div></pre></td></tr></table></figure></p>
-<p>修改运行后，万万没想到，只需要5分钟甚至更少的时间就可以完成任务！而在这之前，这个软件已经运行3年之久，小小的改变，极大优化了工作人员的等待时间（真是心疼仓库的叔叔阿姨！）反思一下，大公司可能也有没有考虑完善的地方，也有可能这种非核心业务并没有得到应有的重视。</p>
-<p>P.S. 虽然下载时间得到了改善，但是从使用者体验出发，他需要能够随时可以关闭这个非常占用时间的任务，如果可以的话，最好能够看到下载进程。然后，我就自己挖了个坑。。。请听下回分解：《C#多线程应用——让海量数据的下载任务可控》</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/09/hello-world/" data-id="cj5131wkc000152nax8o7fuqy" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-
-
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Leo</p>
+          <p class="subtitle"></p>
         </div>
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          
-  <div class="sidebar-module sidebar-module-inset">
-  <h4>About</h4>
-  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/levblanc">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:levblanc@163.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
+
+<!-- Home Page Post List -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-md-10 col-md-offset-1">
+      
+        <div class="post-item-wrapper">
+  <a href="/2017/07/11/Second-Page/" class="post-title">
+      C#多线程应用——让海量数据的下载任务可控
+  </a>
+  <div class="post-excerpt">
+    <!-- Post Date and Categories -->
+    <div class="date-and-category">
+      <div class="date">2017-07-11</div>
+      <div class="categories">
+        
+          Uncategorized
+        
+      </div>
+    </div>
+    <!-- Post Excerpt -->
+    <div class="excerpt typo">暂无文章摘要</div>
+    <!-- Post Tags -->
+    <div class="tags">
+      
+        
+
+<a class="tag" href="/tags/C/">C#</a>
+
+
+      
+    </div>
+  </div>
+</div>
+
+      
+        <div class="post-item-wrapper">
+  <a href="/2017/07/09/hello-world/" class="post-title">
+      一招缩短海量数据的下载时间
+  </a>
+  <div class="post-excerpt">
+    <!-- Post Date and Categories -->
+    <div class="date-and-category">
+      <div class="date">2017-07-09</div>
+      <div class="categories">
+        
+          Uncategorized
+        
+      </div>
+    </div>
+    <!-- Post Excerpt -->
+    <div class="excerpt typo">暂无文章摘要</div>
+    <!-- Post Tags -->
+    <div class="tags">
+      
+        
+
+<a class="tag" href="/tags/C/">C#</a>
+
+
+      
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+</div>
+
+<!-- Pagination -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-md-10 col-md-offset-1">
+      <ul class="pagination">
+          
+          
+      </ul>
+    </div>
+  </div>
 </div>
 
 
-  
 
-
-  
-  <div class="sidebar-module">
-    <h4>Tags</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/C/">C#</a><span class="sidebar-module-list-count">2</span></li></ul>
-  </div>
-
-
-
-  
-  <div class="sidebar-module">
-    <h4>Tag Cloud</h4>
-    <p class="tagcloud">
-      <a href="/tags/C/" style="font-size: 10px;">C#</a>
-    </p>
-  </div>
-
-
-  
-  <div class="sidebar-module">
-    <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/07/">July 2017</a><span class="sidebar-module-list-count">2</span></li></ul>
-  </div>
-
-
-
-  
-  <div class="sidebar-module">
-    <h4>Recents</h4>
-    <ul class="sidebar-module-list">
-      
-        <li>
-          <a href="/2017/07/11/Second-Page/">C#多线程应用——让海量数据的下载任务可控</a>
-        </li>
-      
-        <li>
-          <a href="/2017/07/09/hello-world/">一招缩短海量数据的下载时间</a>
-        </li>
-      
-    </ul>
-  </div>
-
-
-
-        </div>
-    </div>
-  </div>
-  <footer class="blog-footer">
+    <!-- Footer -->
+<footer>
   <div class="container">
-    <div id="footer-info" class="inner">
-      &copy; 2017 Leo Joe Berlin<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
     </div>
   </div>
 </footer>
 
-  
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-
-
-<script src="/js/script.js"></script>
-
-</body>
+  </body>
 </html>
+
